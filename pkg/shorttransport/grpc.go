@@ -183,6 +183,10 @@ func str2err(s string) error {
 }
 
 func err2str(err error) string {
+	if err == nil {
+		return ""
+	}
+
 	switch err {
 	case shortservice.ErrKeyNotFound, shortservice.ErrMaxSizeExceeded:
 		return err.Error()
