@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pb;
+
+// The Shorten service definition.
+service Shorten {
+  // Creates a short key for a value.
+  rpc Create (CreateRequest) returns (CreateReply) {}
+
+  // Looks up a value by its key
+  rpc Lookup (LookupRequest) returns (LookupReply) {}
+}
+
+// The create request creates a short key for a value.
+message CreateRequest {
+  string v = 1;
+}
+
+// The create response contains the created key.
+message CreateReply {
+  string k = 1;
+  string err = 2;
+}
+
+// The Lookup request contains a key.
+message LookupRequest {
+  string k = 1;
+}
+
+// The Lookup response contains the resulting value for the lookup.
+message LookupReply {
+  string v = 1;
+  string err = 2;
+}

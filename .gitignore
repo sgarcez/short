@@ -1,0 +1,4 @@
+./shortcli
+./cmd/shortcli/shortcli
+./shortsvc
+./cmd/shortsvc/shortsvc
