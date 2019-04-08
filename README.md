@@ -50,21 +50,23 @@ The server binary is available in cmd/shortsvc. The client binary is available i
 
 Run the server
 
-```
-$go run shortsvc.go
+```console
+$ go run shortsvc.go
 ```
 
 HTTP client create and lookup
 
-```
-go run shortcli.go -http-addr=:8081 -method=create 12345 
-gnzLDu
+```console
+$ go run shortcli.go -http-addr=:8081 -method=create http://google.com 
+x7kg9X
 
-go run shortcli.go -http-addr=:8081 -method=lookup gnzLDu
+$ go run shortcli.go -http-addr=:8081 -method=lookup x7kg9X
+http://google.com
 ```
 
 gRPC client lookup
 
-```
-go run shortcli.go -grpc-addr=:8082 -method=lookup gnzLDu
+```console
+$ go run shortcli.go -grpc-addr=:8082 -method=lookup x7kg9X
+http://google.com
 ```
