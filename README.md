@@ -1,8 +1,11 @@
 # short
 
 `short` is a URL shortening example service using [go-kit](https://github.com/go-kit/kit).
+
 It supports HTTP/REST and gRPC transports, instrumentation and logging, rate limiting and circuit breaking.
+
 Instrumentation and logging is implemented at service and endpoint levels.
+
 A client is provided following the client library pattern. It includes client side rate limiting and circuit breaking.
 
 A simple in memory map is the only implemented storage backend.
