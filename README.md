@@ -45,3 +45,26 @@ In theory this should allow for fully deterministic database reconstitution from
 ## Binaries
 
 The server binary is available in cmd/shortsvc. The client binary is available in cmd/shortcli.
+
+## Trying it out
+
+Run the server
+
+```
+$go run shortsvc.go
+```
+
+HTTP client create and lookup
+
+```
+go run shortcli.go -http-addr=:8081 -method=create 12345 
+gnzLDu
+
+go run shortcli.go -http-addr=:8081 -method=lookup gnzLDu
+```
+
+gRPC client lookup
+
+```
+go run shortcli.go -grpc-addr=:8082 -method=lookup gnzLDu
+```
